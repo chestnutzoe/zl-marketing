@@ -21,17 +21,21 @@ export default function AboutPage() {
       <Nav active="/about" />
       <main className="flex-1">
         <Container>
-          {/* HERO */}
+          {/* HERO — split */}
           <section className="pt-20 pb-16">
             <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 items-center">
               <div>
-                <Eyebrow>About Zoe</Eyebrow>
+                <Eyebrow>My story</Eyebrow>
                 <H1>
-                  Meet Zoe — <I>the bridge between your brand and China.</I>
+                  Hey, I&apos;m Zoe Li — ex-corporate marketer turned
+                  creator and founder of <I>ZL Marketing.</I>
                 </H1>
-                <p className="text-[15px] text-ink-soft leading-[1.85] max-w-[540px]">
-                  RedNote Creator · Brand Strategist · China Launch Specialist
-                </p>
+                <Link
+                  href="/contact"
+                  className="inline-block mt-4 bg-ink text-cream px-8 py-3 text-[14px] font-medium no-underline hover:opacity-90"
+                >
+                  Contact →
+                </Link>
               </div>
               <Image
                 src={`${IMG}/fotos-profissionais-_-marketing-_-posicionamento-_-autenticidade-_-lanasancost-Awv8N8nVWlfgQkBN.jpeg`}
@@ -46,7 +50,7 @@ export default function AboutPage() {
 
           <Divider />
 
-          {/* STORY */}
+          {/* STORY — image left, long text right */}
           <section>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 items-start">
               <Image
@@ -58,35 +62,48 @@ export default function AboutPage() {
                 unoptimized
               />
               <div>
-                <Eyebrow>My story</Eyebrow>
+                <Eyebrow>Where I&apos;m writing from</Eyebrow>
                 <H2>
-                  8 years. 100+ brands. <I>One constant:</I> cultural
-                  clarity.
+                  From a coworking space <I>in Lisbon.</I>
                 </H2>
                 <Body>
-                  I didn&apos;t start as a marketer. I started as someone who
-                  lived between two cultures — watching Western brands
-                  struggle to say the right thing in China, and Chinese
-                  consumers quietly scroll past content that didn&apos;t
-                  speak to them.
+                  Yes, I&apos;m a digital nomad, working from anywhere in
+                  the world. Before all this, I was just another marketing
+                  specialist sitting at a desk in China, helping brands run
+                  campaigns that looked good on paper but rarely felt real.
                 </Body>
                 <Body>
-                  Over the past <strong>8 years</strong>, I&apos;ve helped
-                  more than <strong>100 brands</strong> in lifestyle, design,
-                  and creative industries build a real presence on RedNote —
-                  not a translated presence, a felt one.
+                  Then 2020 happened. <strong>I left my 9–5</strong>, packed
+                  up everything I knew about marketing, and started my own
+                  thing — one client, one experiment at a time.
                 </Body>
                 <Body>
-                  As a creator with <strong>160K+ followers</strong> across
-                  two accounts, I know what stops the scroll and what gets
-                  ignored. That lived knowledge is what I bring to every
-                  client engagement.
+                  Over time, I noticed a pattern: Western brands wanted to
+                  connect with Chinese audiences, but they were trying to{" "}
+                  <em className="not-italic">translate</em>, not{" "}
+                  <em className="not-italic">resonate.</em>
                 </Body>
                 <Body>
-                  Today, ZL Marketing Studio works with two kinds of people:
-                  creators and experts who want to publish a proven offer in
-                  China, and founder-led brands who want a KOL strategy they
-                  can actually execute.
+                  That&apos;s how <strong>ZL Marketing</strong> was born — a
+                  small studio blending East and West, strategy and story,
+                  logic and flow.
+                </Body>
+                <Body>
+                  Now I work with global, lifestyle, and creative brands to
+                  build connection, engagement, and growth in China —
+                  through RedNote (Xiaohongshu), my favorite corner of the
+                  internet.
+                </Body>
+                <Body>
+                  Outside the studio, I&apos;m also a creator with over{" "}
+                  <strong>150K followers</strong> sharing my journey of
+                  entrepreneurship, travel, and philosophy — the real
+                  behind-the-scenes of building a one-person business and
+                  creating a life that feels free and meaningful.
+                </Body>
+                <Body>
+                  For me, this isn&apos;t just about marketing. It&apos;s
+                  about culture, feeling, and creating meaning that lasts.
                 </Body>
               </div>
             </div>
@@ -94,36 +111,82 @@ export default function AboutPage() {
 
           <Divider />
 
-          {/* APPROACH */}
+          {/* MATCH */}
           <section>
-            <Eyebrow>How I work</Eyebrow>
+            <Eyebrow>Who we work best with</Eyebrow>
             <H2>
-              Quiet strategy. Clear decisions. <I>Taste over noise.</I>
+              We&apos;re a great marketing match <I>if you…</I>
             </H2>
-            <div className="flex flex-col gap-3 my-6">
-              {[
-                [
-                  "01 · Cultural fluency first",
-                  "Before strategy comes understanding. I read the room — RedNote's moods, the aesthetics that resonate, the language that lands. No templates. No copy-paste from Western playbooks.",
-                ],
-                [
-                  "02 · Specificity over scale",
-                  "I work with a small number of clients at a time. Not because I can't handle volume — because doing fewer things well is how you build something that lasts.",
-                ],
-                [
-                  "03 · Plans you can execute",
-                  "My job isn't to hand you a deck and disappear. Every strategy I build is designed to be understood, owned, and acted on — by you or your team.",
-                ],
-              ].map(([title, body]) => (
-                <div key={title} className="bg-white border border-border p-6">
-                  <p className="font-italic italic text-[20px] text-ink leading-snug mb-2">
-                    {title}
-                  </p>
-                  <p className="text-[14px] text-ink-soft leading-[1.75]">
-                    {body}
-                  </p>
-                </div>
-              ))}
+            <div className="bg-white border border-border p-7 my-6 max-w-[640px]">
+              <ul className="flex flex-col gap-3">
+                {[
+                  <>
+                    See business as a <strong>creative language</strong> — a
+                    force for good that inspires change.
+                  </>,
+                  <>
+                    Want your brand to feel <strong>human</strong>, calm,
+                    and intentional.
+                  </>,
+                  <>
+                    Seek a partner who understands both art and analytics,{" "}
+                    <strong>East and West.</strong>
+                  </>,
+                  <>
+                    Crave collaboration that feels like creative{" "}
+                    <strong>alignment</strong>, not just service delivery.
+                  </>,
+                ].map((node, i) => (
+                  <li
+                    key={i}
+                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                  >
+                    {node}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-[15px] italic text-ink-soft max-w-[560px]">
+              If that feels true — we&apos;ll craft stories for the China
+              market that stay <strong>in hearts</strong>, not just feeds.
+            </p>
+          </section>
+
+          <Divider />
+
+          {/* MANIFESTO */}
+          <section>
+            <Eyebrow>The manifesto</Eyebrow>
+            <H2>
+              For global brands <I>who believe in meaning.</I>
+            </H2>
+            <Body>
+              At ZL Marketing, we believe{" "}
+              <strong>marketing is the medium</strong> — where your
+              brand&apos;s truth flows across cultures and connects with
+              hearts.
+            </Body>
+            <Body>
+              Storytelling creates <strong>meaning</strong> — meaning moves
+              people — and when people are moved,{" "}
+              <strong>sales follow naturally.</strong>
+            </Body>
+            <Body>
+              We help global brands express their{" "}
+              <strong>belief, beauty, and purpose</strong> in a way that
+              resonates with Chinese audiences — building trust, not noise.
+            </Body>
+            <Body>
+              We don&apos;t run campaigns. We craft{" "}
+              <em className="not-italic">stories that stay.</em> We turn
+              brand essence into cultural resonance.
+            </Body>
+            <div className="bg-accent-soft border-l-2 border-accent p-5 my-8 max-w-[600px]">
+              <p className="text-[15px] italic text-accent leading-[1.85]">
+                Branding is your poetry. Marketing is your storytelling
+                medium. Product is your language — how you communicate your
+                truth to the world.
+              </p>
             </div>
           </section>
 
