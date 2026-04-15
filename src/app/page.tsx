@@ -114,57 +114,65 @@ export default function Home() {
 
           <Divider />
 
-          {/* SERVICES */}
+          {/* SERVICES — Saffron-style numbered editorial list */}
           <section>
             <Eyebrow>Services</Eyebrow>
             <H2>
               How we can <I>create together</I>
             </H2>
-            <div className="my-8">
+            <div className="mt-12 border-t border-border">
               {[
                 {
-                  label: "Digital Resources",
-                  name: "For creators and small teams building at your own pace.",
-                  small:
-                    "RedNote Blueprint · Business Account DIY Guide · Creator Pitch Kit",
+                  n: "01",
+                  title: "Digital Resources",
+                  tagline:
+                    "For creators and small teams building at your own pace.",
+                  desc: "RedNote Blueprint · Business Account DIY Guide · Creator Pitch Kit",
                   href: "/store",
-                  cta: "Store →",
+                  cta: "Store",
                 },
                 {
-                  label: "For Creators & Experts",
-                  name: "Publish your proven offer in China.",
-                  small: "Requires an existing offer + audience.",
+                  n: "02",
+                  title: "For Creators & Experts",
+                  tagline:
+                    "Publish your proven offer in China.",
+                  desc: "Requires an existing offer and an active RedNote audience. I build the store, payments, and delivery — you keep creating.",
                   href: "/creator",
-                  cta: "See details →",
+                  cta: "See details",
                 },
                 {
-                  label: "For Brands",
-                  name: "KOL Campaign Launch Plan + Execute",
-                  small: "Project-based. No monthly management required.",
+                  n: "03",
+                  title: "For Brands",
+                  tagline:
+                    "KOL Campaign Launch Plan + Execute.",
+                  desc: "Project-based. No monthly management required. Strategy, creator selection, briefing, execution, and reporting — end to end.",
                   href: "/brand",
-                  cta: "See details →",
+                  cta: "See details",
                 },
               ].map((s) => (
-                <div
+                <Link
                   key={s.href}
-                  className="grid grid-cols-1 md:grid-cols-[180px_1fr_auto] gap-6 items-center py-6 border-b border-border last:border-0"
+                  href={s.href}
+                  className="group grid grid-cols-[auto_1fr] md:grid-cols-[110px_1fr_auto] gap-x-8 md:gap-x-12 gap-y-3 items-start py-10 md:py-14 border-b border-border no-underline transition-colors hover:bg-white/40 px-2"
                 >
-                  <div className="text-[11px] font-medium uppercase tracking-[0.1em] text-ink-muted">
-                    {s.label}
+                  <span className="font-display text-[clamp(40px,5vw,64px)] leading-none text-ink">
+                    {s.n}.
+                  </span>
+                  <div>
+                    <p className="font-display text-[clamp(24px,3vw,34px)] leading-[1.1] text-ink mb-2">
+                      {s.title}
+                    </p>
+                    <p className="font-italic italic text-[16px] text-ink-soft leading-snug mb-3">
+                      {s.tagline}
+                    </p>
+                    <p className="text-[13px] text-ink-muted leading-[1.7] max-w-[520px]">
+                      {s.desc}
+                    </p>
                   </div>
-                  <div className="font-italic italic text-[19px] text-ink leading-snug">
-                    {s.name}
-                    <small className="block font-body not-italic text-[13px] text-ink-muted mt-1 leading-[1.6]">
-                      {s.small}
-                    </small>
-                  </div>
-                  <Link
-                    href={s.href}
-                    className="text-[13px] text-accent no-underline border-b border-accent-line pb-0.5 hover:text-ink hover:border-ink"
-                  >
-                    {s.cta}
-                  </Link>
-                </div>
+                  <span className="hidden md:block self-center text-[12px] uppercase tracking-[0.15em] text-accent border-b border-accent-line pb-0.5 whitespace-nowrap group-hover:text-ink group-hover:border-ink">
+                    {s.cta} →
+                  </span>
+                </Link>
               ))}
             </div>
           </section>
