@@ -11,9 +11,8 @@ import {
   I,
 } from "@/components/Type";
 
-// Replace this with your real Tally form ID once you've created the form.
-// Find it in the URL: https://tally.so/forms/<THIS_ID>
-const TALLY_FORM_ID = process.env.NEXT_PUBLIC_TALLY_FORM_ID || "";
+// Tally form ID — from https://tally.so/r/J9J5DK
+const TALLY_FORM_ID = process.env.NEXT_PUBLIC_TALLY_FORM_ID || "J9J5DK";
 
 export default function ContactPage() {
   return (
