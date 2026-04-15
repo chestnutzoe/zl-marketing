@@ -45,7 +45,7 @@ export default function BrandPage() {
                 </p>
               </div>
               <Image
-                src={`${IMG}/linkedin-banner-Yg299DWvl8SG7KKq-scaled.png`}
+                src={`${IMG}/img_0098-mxB26b1ok2UaMx1R.jpg`}
                 alt=""
                 width={500}
                 height={625}
