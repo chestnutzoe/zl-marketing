@@ -51,17 +51,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Wide image break — one elegant photo, not a triptych */}
-          <div className="my-16">
-            <Image
-              src={`${IMG}/linkedin-banner-Yg299DWvl8SG7KKq-scaled.png`}
-              alt=""
-              width={1600}
-              height={800}
-              className="w-full h-[360px] sm:h-[460px] object-cover"
-              unoptimized
-            />
-          </div>
+          <div className="h-20" />
 
           {/* ABOUT SPLIT */}
           <section>
