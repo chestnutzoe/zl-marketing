@@ -12,22 +12,22 @@ const links = [
 
 export default function Nav({ active }: { active?: string }) {
   return (
-    <nav className="border-b border-border py-6">
-      <div className="mx-auto max-w-[1080px] px-6 flex items-center justify-between gap-8">
+    <nav className="py-6">
+      <div className="mx-auto max-w-[1200px] px-8 grid grid-cols-[auto_1fr_auto] items-center gap-8">
         <Link
           href="/"
-          className="font-display text-[19px] tracking-tight text-ink no-underline"
+          className="font-display text-[18px] tracking-tight text-ink no-underline"
         >
-          ZL Marketing Studio
+          ZL Marketing
         </Link>
-        <div className="hidden md:flex gap-7">
+        <div className="hidden md:flex justify-center gap-10">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`text-[14px] no-underline transition-colors ${
+              className={`text-[12px] uppercase tracking-[0.15em] no-underline transition-colors ${
                 active === l.href
-                  ? "text-ink font-medium"
+                  ? "text-ink"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
@@ -35,6 +35,7 @@ export default function Nav({ active }: { active?: string }) {
             </Link>
           ))}
         </div>
+        <div />
       </div>
     </nav>
   );

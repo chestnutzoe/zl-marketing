@@ -21,47 +21,47 @@ export default function Home() {
       <Nav active="/" />
       <main className="flex-1">
         <Container>
-          {/* HERO */}
-          <section className="pt-24 pb-20 text-center">
-            <Eyebrow>A China Launch Studio</Eyebrow>
-            <H1>
+          {/* HERO — single confident block, Saffron style */}
+          <section className="pt-32 pb-10 text-center">
+            <p className="text-[12px] uppercase tracking-[0.2em] text-accent mb-8">
+              A China Launch Studio
+            </p>
+            <h1 className="font-display text-[clamp(44px,6vw,76px)] leading-[1.02] tracking-[-0.01em] text-ink max-w-[900px] mx-auto font-normal">
               Turn RedNote attention into{" "}
               <I>inquiries, bookings, and sales.</I>
-            </H1>
-            <p className="text-[15px] text-ink-soft leading-[1.85] max-w-[540px] mx-auto">
+            </h1>
+            <p className="text-[15px] text-ink-soft leading-[1.85] max-w-[560px] mx-auto mt-8">
               For creators, experts, and founder-led brands ready to publish
               in China — quietly, with taste, and with infrastructure that
               actually converts.
             </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/creator"
+                className="inline-block bg-ink text-cream px-8 py-3 text-[13px] uppercase tracking-[0.15em] no-underline hover:opacity-90"
+              >
+                For Creators
+              </Link>
+              <Link
+                href="/brand"
+                className="inline-block border border-ink text-ink px-8 py-3 text-[13px] uppercase tracking-[0.15em] no-underline hover:bg-ink hover:text-cream transition-colors"
+              >
+                For Brands
+              </Link>
+            </div>
           </section>
 
-          {/* TRIPTYCH 1 */}
-          <div className="grid grid-cols-1 sm:grid-cols-[1fr_1.6fr_1fr] gap-6 items-center my-12">
+          {/* Wide image break — one elegant photo, not a triptych */}
+          <div className="my-16">
             <Image
-              src={`${IMG}/11-AoP4L4BzMLi078bR.jpeg`}
+              src={`${IMG}/linkedin-banner-Yg299DWvl8SG7KKq-scaled.png`}
               alt=""
-              width={400}
-              height={500}
-              className="w-full aspect-[3/4] object-cover"
-              unoptimized
-            />
-            <div className="text-center">
-              <Eyebrow>Welcome</Eyebrow>
-              <H2>
-                Quiet strategy. <I>Built with taste.</I>
-              </H2>
-            </div>
-            <Image
-              src={`${IMG}/14-YNqMabDGnkF96nlj.jpeg`}
-              alt=""
-              width={400}
-              height={500}
-              className="w-full aspect-[3/4] object-cover"
+              width={1600}
+              height={800}
+              className="w-full h-[360px] sm:h-[460px] object-cover"
               unoptimized
             />
           </div>
-
-          <Divider />
 
           {/* ABOUT SPLIT */}
           <section>
