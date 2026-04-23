@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <a
               href="mailto:zoe@chinamarketingzl.com"
-              className="text-[14px] text-accent no-underline block mb-2"
+              className="relative text-[14px] text-accent no-underline block mb-2 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full"
             >
               zoe@chinamarketingzl.com
             </a>
@@ -30,7 +30,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[12px] text-ink-muted no-underline hover:text-ink"
+                  className="relative text-[12px] text-ink-muted no-underline transition-colors duration-300 hover:text-ink after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full"
                 >
                   {label}
                 </a>

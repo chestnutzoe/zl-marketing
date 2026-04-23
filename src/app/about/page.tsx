@@ -32,19 +32,22 @@ export default function AboutPage() {
                 </H1>
                 <Link
                   href="/contact"
-                  className="inline-block mt-4 bg-ink text-cream px-8 py-3 text-[14px] font-medium no-underline hover:opacity-90"
+                  className="group inline-flex items-center gap-2 mt-4 bg-brand text-cream px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  Contact →
+                  Contact
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
-              <Image
-                src={`${IMG}/fotos-profissionais-_-marketing-_-posicionamento-_-autenticidade-_-lanasancost-Awv8N8nVWlfgQkBN.jpeg`}
-                alt="Zoe Li"
-                width={500}
-                height={625}
-                className="w-full aspect-[4/5] object-cover"
-                unoptimized
-              />
+              <div className="group overflow-hidden rounded-xl shadow-[0_24px_60px_-16px_rgba(26,26,26,0.2)] transition-shadow duration-500 hover:shadow-[0_32px_80px_-20px_rgba(26,26,26,0.28)]">
+                <Image
+                  src={`${IMG}/fotos-profissionais-_-marketing-_-posicionamento-_-autenticidade-_-lanasancost-Awv8N8nVWlfgQkBN.jpeg`}
+                  alt="Zoe Li"
+                  width={500}
+                  height={625}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  unoptimized
+                />
+              </div>
             </div>
           </section>
 
@@ -52,15 +55,17 @@ export default function AboutPage() {
 
           {/* STORY — image left, long text right */}
           <section>
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 items-start">
-              <Image
-                src={`${IMG}/img_6972-dOqZO7KJ75sylOMn.jpg`}
-                alt=""
-                width={500}
-                height={625}
-                className="w-full aspect-[4/5] object-cover"
-                unoptimized
-              />
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 items-center">
+              <div className="group overflow-hidden rounded-xl shadow-[0_24px_60px_-16px_rgba(26,26,26,0.2)] transition-shadow duration-500 hover:shadow-[0_32px_80px_-20px_rgba(26,26,26,0.28)]">
+                <Image
+                  src={`${IMG}/img_6972-dOqZO7KJ75sylOMn.jpg`}
+                  alt=""
+                  width={500}
+                  height={625}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  unoptimized
+                />
+              </div>
               <div>
                 <Eyebrow>Where I&apos;m writing from</Eyebrow>
                 <H2>
@@ -117,7 +122,7 @@ export default function AboutPage() {
             <H2>
               We&apos;re a great marketing match <I>if you…</I>
             </H2>
-            <div className="bg-white border border-border p-7 my-6 max-w-[640px]">
+            <div className="bg-white border border-border/60 rounded-xl p-8 my-6 max-w-[640px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
               <ul className="flex flex-col gap-3">
                 {[
                   <>
@@ -139,7 +144,7 @@ export default function AboutPage() {
                 ].map((node, i) => (
                   <li
                     key={i}
-                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
                   >
                     {node}
                   </li>
@@ -181,7 +186,7 @@ export default function AboutPage() {
               <em className="not-italic">stories that stay.</em> We turn
               brand essence into cultural resonance.
             </Body>
-            <div className="bg-accent-soft border-l-2 border-accent p-5 my-8 max-w-[600px]">
+            <div className="bg-accent-soft border-l-2 border-accent rounded-r-xl p-6 my-8 max-w-[600px] shadow-[0_8px_32px_-10px_rgba(93,118,139,0.25)] transition-all duration-400 ease-out hover:shadow-[0_16px_44px_-10px_rgba(93,118,139,0.35)] hover:-translate-y-1">
               <p className="text-[15px] italic text-accent leading-[1.85]">
                 Branding is your poetry. Marketing is your storytelling
                 medium. Product is your language — how you communicate your
@@ -191,11 +196,11 @@ export default function AboutPage() {
           </section>
 
           {/* CTA */}
-          <div className="bg-ink text-cream text-center py-14 px-8 my-16">
+          <div className="bg-brand text-cream text-center py-14 px-8 my-16 rounded-2xl shadow-[0_20px_60px_-20px_rgba(79,105,126,0.45)]">
             <p className="font-display text-[clamp(24px,4vw,32px)] text-cream mb-3 leading-tight">
               Ready to launch in China?
             </p>
-            <p className="text-[15px] text-cream/65 mb-8 leading-[1.7] max-w-[540px] mx-auto">
+            <p className="text-[15px] text-cream/70 mb-8 leading-[1.7] max-w-[540px] mx-auto">
               Whether you&apos;re a creator with a proven offer or a brand
               planning your first KOL campaign — let&apos;s see if
               we&apos;re a good fit.
@@ -203,15 +208,17 @@ export default function AboutPage() {
             <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href="/creator"
-                className="inline-block bg-cream text-ink px-10 py-4 text-[15px] font-medium no-underline hover:opacity-90"
+                className="group inline-flex items-center gap-2 bg-cream text-brand px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0"
               >
-                For Creators →
+                For Creators
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="/brand"
-                className="inline-block bg-cream text-ink px-10 py-4 text-[15px] font-medium no-underline hover:opacity-90"
+                className="group inline-flex items-center gap-2 border border-cream text-cream px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-cream hover:text-brand hover:-translate-y-0.5 active:translate-y-0"
               >
-                For Brands →
+                For Brands
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </div>
           </div>

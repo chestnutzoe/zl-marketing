@@ -38,19 +38,22 @@ export default function CreatorPage() {
                 </p>
                 <Link
                   href="#apply"
-                  className="inline-block mt-4 bg-ink text-cream px-8 py-3 text-[14px] font-medium no-underline hover:opacity-90"
+                  className="group inline-flex items-center gap-2 mt-4 bg-brand text-cream px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  Apply →
+                  Apply
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
-              <Image
-                src={`${IMG}/img_9728-mP43xNlQg3UBqePE.jpg`}
-                alt=""
-                width={500}
-                height={625}
-                className="w-full aspect-[4/5] object-cover"
-                unoptimized
-              />
+              <div className="group overflow-hidden rounded-xl shadow-[0_24px_60px_-16px_rgba(26,26,26,0.2)] transition-shadow duration-500 hover:shadow-[0_32px_80px_-20px_rgba(26,26,26,0.28)]">
+                <Image
+                  src={`${IMG}/img_9728-mP43xNlQg3UBqePE.jpg`}
+                  alt=""
+                  width={500}
+                  height={625}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  unoptimized
+                />
+              </div>
             </div>
           </section>
 
@@ -62,7 +65,7 @@ export default function CreatorPage() {
             <H2>
               This is <I>for you if</I>
             </H2>
-            <div className="bg-white border border-border p-7 my-6 max-w-[640px]">
+            <div className="bg-white border border-border/60 rounded-xl p-8 my-6 max-w-[640px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
               <ul className="flex flex-col gap-3">
                 {[
                   "You have a course or digital program — selling somewhere, or ready to launch",
@@ -72,7 +75,7 @@ export default function CreatorPage() {
                 ].map((t) => (
                   <li
                     key={t}
-                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
                   >
                     {t}
                   </li>
@@ -90,14 +93,16 @@ export default function CreatorPage() {
           {/* PROBLEM — split */}
           <section>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 items-start">
-              <Image
-                src={`${IMG}/11-AoP4L4BzMLi078bR.jpeg`}
-                alt=""
-                width={500}
-                height={625}
-                className="w-full aspect-[4/5] object-cover sticky top-8"
-                unoptimized
-              />
+              <div className="group overflow-hidden rounded-xl shadow-[0_24px_60px_-16px_rgba(26,26,26,0.2)] transition-shadow duration-500 hover:shadow-[0_32px_80px_-20px_rgba(26,26,26,0.28)] sticky top-8">
+                <Image
+                  src={`${IMG}/11-AoP4L4BzMLi078bR.jpeg`}
+                  alt=""
+                  width={500}
+                  height={625}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  unoptimized
+                />
+              </div>
               <div>
                 <Eyebrow>Why it&apos;s harder than it looks</Eyebrow>
                 <H2>
@@ -129,7 +134,7 @@ export default function CreatorPage() {
                   ].map((p) => (
                     <div
                       key={p.title}
-                      className="bg-white border border-border p-5"
+                      className="bg-white border border-border/60 rounded-xl p-5 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1"
                     >
                       <p className="font-italic italic text-[19px] text-ink leading-[1.4] mb-2">
                         {p.title}
@@ -173,7 +178,7 @@ export default function CreatorPage() {
               ].map(([before, after]) => (
                 <div
                   key={before}
-                  className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-start bg-white border border-border p-5"
+                  className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-start bg-white border border-border/60 rounded-xl p-5 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1"
                 >
                   <p className="text-[14px] text-ink-muted line-through leading-[1.5]">
                     {before}
@@ -222,7 +227,7 @@ export default function CreatorPage() {
               ].map(([title, body]) => (
                 <div
                   key={title}
-                  className="bg-white border border-border p-6"
+                  className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5"
                 >
                   <p className="font-italic italic text-[20px] text-ink leading-snug mb-2">
                     {title}
@@ -248,7 +253,7 @@ export default function CreatorPage() {
               paid when you get paid.
             </Body>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-              <div className="bg-white border border-border p-6">
+              <div className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
                 <p className="text-[11px] uppercase tracking-[0.1em] text-ink-muted mb-2">
                   One-time
                 </p>
@@ -261,7 +266,7 @@ export default function CreatorPage() {
                   to get you live and selling in China.
                 </p>
               </div>
-              <div className="bg-white border border-border p-6">
+              <div className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
                 <p className="text-[11px] uppercase tracking-[0.1em] text-ink-muted mb-2">
                   Ongoing
                 </p>
@@ -279,7 +284,7 @@ export default function CreatorPage() {
               Exact revenue share confirmed after your application — based on
               your offer, pricing, and current RedNote traction.
             </p>
-            <div className="bg-accent-soft border-l-2 border-accent p-5 my-8">
+            <div className="bg-accent-soft border-l-2 border-accent rounded-r-xl p-6 my-8 shadow-[0_8px_32px_-10px_rgba(93,118,139,0.25)] transition-all duration-400 ease-out hover:shadow-[0_16px_44px_-10px_rgba(93,118,139,0.35)] hover:-translate-y-1">
               <p className="text-[11px] uppercase tracking-[0.1em] text-accent mb-2">
                 Bonus
               </p>
@@ -298,14 +303,16 @@ export default function CreatorPage() {
           {/* WHY ME — split */}
           <section>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 items-center">
-              <Image
-                src={`${IMG}/img_6972-dOqZO7KJ75sylOMn.jpg`}
-                alt="Zoe Li"
-                width={500}
-                height={625}
-                className="w-full aspect-[4/5] object-cover"
-                unoptimized
-              />
+              <div className="group overflow-hidden rounded-xl shadow-[0_24px_60px_-16px_rgba(26,26,26,0.2)] transition-shadow duration-500 hover:shadow-[0_32px_80px_-20px_rgba(26,26,26,0.28)]">
+                <Image
+                  src={`${IMG}/img_6972-dOqZO7KJ75sylOMn.jpg`}
+                  alt="Zoe Li"
+                  width={500}
+                  height={625}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  unoptimized
+                />
+              </div>
               <div>
                 <Eyebrow>Why me</Eyebrow>
                 <H2>
@@ -327,7 +334,7 @@ export default function CreatorPage() {
                     ],
                   ].map(([num, desc]) => (
                     <div key={num} className="flex gap-5 items-start">
-                      <p className="font-display text-[36px] text-ink leading-none min-w-[100px]">
+                      <p className="font-display text-[36px] text-brand leading-none min-w-[100px] tabular-nums">
                         {num}
                       </p>
                       <p className="text-[14px] text-ink-soft leading-[1.65] pt-1.5">
@@ -343,21 +350,22 @@ export default function CreatorPage() {
           {/* CTA */}
           <div
             id="apply"
-            className="bg-ink text-cream text-center py-14 px-8 my-16"
+            className="bg-brand text-cream text-center py-14 px-8 my-16 rounded-2xl shadow-[0_20px_60px_-20px_rgba(79,105,126,0.45)]"
           >
             <p className="font-display text-[clamp(24px,4vw,34px)] text-cream mb-3 leading-tight">
               Ready to finally monetize your RedNote audience?
             </p>
-            <p className="text-[15px] text-cream/65 mb-8 leading-[1.7] max-w-[520px] mx-auto">
+            <p className="text-[15px] text-cream/70 mb-8 leading-[1.7] max-w-[520px] mx-auto">
               Apply — I&apos;ll review your offer and RedNote presence within
               48 hours. I only take on creators where I can see a clear path
               to sales. If it&apos;s not the right fit, I&apos;ll tell you.
             </p>
             <a
               href="mailto:zoe@chinamarketingzl.com?subject=Creator partnership application"
-              className="inline-block bg-cream text-ink px-10 py-4 text-[15px] font-medium no-underline hover:opacity-90"
+              className="group inline-flex items-center gap-2 bg-cream text-brand px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0"
             >
-              Apply to partner →
+              Apply to partner
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Container>

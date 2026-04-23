@@ -9,6 +9,9 @@
   --color-accent: #5d768b;
   --color-accent-soft: #e4ecf2;
   --color-accent-line: rgba(93, 118, 139, 0.25);
+  --color-brand: #4f697e;
+  --color-brand-hover: #3f5768;
+  --color-brand-soft: #dde5ef;
   --color-border: rgba(42, 42, 42, 0.10);
   --color-border-str: rgba(42, 42, 42, 0.20);
 
