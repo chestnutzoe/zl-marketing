@@ -44,14 +44,16 @@ export default function BrandPage() {
                   felt.
                 </p>
               </div>
-              <Image
-                src={`${IMG}/img_0098-mxB26b1ok2UaMx1R.jpg`}
-                alt=""
-                width={500}
-                height={625}
-                className="w-full aspect-[4/5] object-cover"
-                unoptimized
-              />
+              <div className="group overflow-hidden rounded-xl shadow-[0_24px_60px_-16px_rgba(26,26,26,0.2)] transition-shadow duration-500 hover:shadow-[0_32px_80px_-20px_rgba(26,26,26,0.28)]">
+                <Image
+                  src={`${IMG}/img_0098-mxB26b1ok2UaMx1R.jpg`}
+                  alt=""
+                  width={500}
+                  height={625}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  unoptimized
+                />
+              </div>
             </div>
           </section>
 
@@ -87,10 +89,13 @@ export default function BrandPage() {
               ].map((p) => (
                 <div
                   key={p.title}
-                  className="bg-white border border-border p-6"
+                  className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5"
                 >
                   <p className="font-italic italic text-[20px] text-ink leading-[1.4] mb-2">
-                    {p.title}
+                    <span className="not-italic font-display text-brand tracking-[0.05em] mr-1">
+                      {p.title.split(" · ")[0]}
+                    </span>
+                    <span>· {p.title.split(" · ")[1]}</span>
                   </p>
                   <p className="text-[14px] text-ink-soft leading-[1.75]">
                     {p.body}
@@ -138,10 +143,13 @@ export default function BrandPage() {
               ].map(([title, body]) => (
                 <div
                   key={title}
-                  className="bg-white border border-border p-6"
+                  className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5"
                 >
                   <p className="font-italic italic text-[20px] text-ink leading-snug mb-2">
-                    {title}
+                    <span className="not-italic font-display text-brand tracking-[0.05em] mr-1">
+                      {title.split(" · ")[0]}
+                    </span>
+                    <span>· {title.split(" · ")[1]}</span>
                   </p>
                   <p className="text-[14px] text-ink-soft leading-[1.75]">
                     {body}
@@ -164,7 +172,7 @@ export default function BrandPage() {
               optimizing RedNote. You walk away with a clear, executable
               campaign plan your team can run internally.
             </Body>
-            <div className="bg-white border border-border p-7 my-6 max-w-[640px]">
+            <div className="bg-white border border-border/60 rounded-xl p-8 my-6 max-w-[640px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
               <p className="text-[14px] font-medium text-ink mb-3">
                 Includes
               </p>
@@ -179,7 +187,7 @@ export default function BrandPage() {
                 ].map((t) => (
                   <li
                     key={t}
-                    className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                    className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
                   >
                     {t}
                   </li>
@@ -187,7 +195,7 @@ export default function BrandPage() {
               </ul>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-              <div className="bg-white border border-border p-6">
+              <div className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
                 <p className="text-[11px] uppercase tracking-[0.1em] text-ink-muted mb-2">
                   Investment
                 </p>
@@ -199,7 +207,7 @@ export default function BrandPage() {
                   working together.
                 </p>
               </div>
-              <div className="bg-white border border-border p-6">
+              <div className="bg-white border border-border/60 rounded-xl p-7 shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
                 <p className="text-[11px] uppercase tracking-[0.1em] text-ink-muted mb-2">
                   Best for
                 </p>
@@ -227,7 +235,7 @@ export default function BrandPage() {
               alignment, we manage everything — you stay focused on brand
               direction, we handle the cultural and operational complexity.
             </Body>
-            <div className="bg-white border border-border p-7 my-6 max-w-[640px]">
+            <div className="bg-white border border-border/60 rounded-xl p-8 my-6 max-w-[640px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
               <p className="text-[14px] font-medium text-ink mb-3">
                 We handle
               </p>
@@ -241,7 +249,7 @@ export default function BrandPage() {
                 ].map((t) => (
                   <li
                     key={t}
-                    className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                    className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
                   >
                     {t}
                   </li>
@@ -262,7 +270,7 @@ export default function BrandPage() {
               For brands with <I>a point of view</I>
             </H2>
             <Body>You&apos;re a strong fit if:</Body>
-            <div className="bg-white border border-border p-7 my-6 max-w-[640px]">
+            <div className="bg-white border border-border/60 rounded-xl p-8 my-6 max-w-[640px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
               <ul className="flex flex-col gap-3">
                 {[
                   "You're a founder-led brand with a distinct point of view — and you refuse generic influencer spam",
@@ -273,7 +281,7 @@ export default function BrandPage() {
                 ].map((t) => (
                   <li
                     key={t}
-                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                    className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
                   >
                     {t}
                   </li>
@@ -320,7 +328,7 @@ export default function BrandPage() {
               make sure your brand shows up in China{" "}
               <strong>the way it deserves</strong> — raw, resonant, and real.
             </Body>
-            <div className="bg-accent-soft border-l-2 border-accent p-5 my-6">
+            <div className="bg-accent-soft border-l-2 border-accent rounded-r-xl p-6 my-6 shadow-[0_8px_32px_-10px_rgba(93,118,139,0.25)] transition-all duration-400 ease-out hover:shadow-[0_16px_44px_-10px_rgba(93,118,139,0.35)] hover:-translate-y-1">
               <p className="text-[16px] italic text-accent leading-[1.75]">
                 Because the best marketing isn&apos;t polished. It&apos;s
                 true.
@@ -329,20 +337,21 @@ export default function BrandPage() {
           </section>
 
           {/* CTA */}
-          <div className="bg-ink text-cream text-center py-14 px-8 my-16">
+          <div className="bg-brand text-cream text-center py-14 px-8 my-16 rounded-2xl shadow-[0_20px_60px_-20px_rgba(79,105,126,0.45)]">
             <p className="font-display text-[clamp(24px,4vw,34px)] text-cream mb-3 leading-tight">
               Have questions? Book a fit call.
             </p>
-            <p className="text-[15px] text-cream/65 mb-8 leading-[1.7] max-w-[540px] mx-auto">
+            <p className="text-[15px] text-cream/70 mb-8 leading-[1.7] max-w-[540px] mx-auto">
               If you&apos;re an indie, lifestyle, or founder-led brand ready
               to launch RedNote the right way — book a 15-min fit call with
               Zoe to see if we&apos;re a creative match.
             </p>
             <a
               href="mailto:zoe@chinamarketingzl.com?subject=Brand fit call"
-              className="inline-block bg-cream text-ink px-10 py-4 text-[15px] font-medium no-underline hover:opacity-90"
+              className="group inline-flex items-center gap-2 bg-cream text-brand px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0"
             >
-              Book a 15-min call →
+              Book a 15-min call
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Container>

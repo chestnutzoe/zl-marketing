@@ -48,7 +48,7 @@ export default function ContactPage() {
                     Make sure you are applying as
                   </p>
                   <ul className="flex flex-col gap-3">
-                    <li className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent">
+                    <li className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand">
                       <strong className="text-ink">Creator</strong> — digital
                       products, courses, and paid memberships. See{" "}
                       <Link
@@ -59,7 +59,7 @@ export default function ContactPage() {
                       </Link>
                       .
                     </li>
-                    <li className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent">
+                    <li className="text-[15px] text-ink-soft leading-[1.6] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand">
                       <strong className="text-ink">Brand</strong> — KOL
                       campaigns, launch plans, execution. See{" "}
                       <Link
@@ -103,7 +103,7 @@ export default function ContactPage() {
               </div>
 
               {/* FORM */}
-              <div className="bg-white border border-border p-7 md:p-8">
+              <div className="bg-white border border-border/60 rounded-xl p-7 md:p-9 shadow-[0_10px_40px_-12px_rgba(79,105,126,0.12)] transition-all duration-400 ease-out hover:shadow-[0_20px_60px_-16px_rgba(79,105,126,0.22)] hover:-translate-y-1">
                 <p className="text-[11px] uppercase tracking-[0.18em] text-ink-muted mb-2">
                   Application
                 </p>
@@ -137,9 +137,10 @@ export default function ContactPage() {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[14px] text-accent no-underline border-b border-accent-line pb-0.5 hover:text-ink hover:border-ink"
+                  className="group inline-flex items-center gap-2 text-[14px] text-accent no-underline border-b border-accent-line pb-0.5 transition-colors duration-300 hover:text-ink hover:border-ink"
                 >
-                  {label} →
+                  {label}
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </a>
               ))}
             </div>

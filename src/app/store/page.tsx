@@ -86,12 +86,12 @@ export default function StorePage() {
                 {p.tagline}
               </p>
               <Body>{p.desc}</Body>
-              <div className="bg-white border border-border p-6 my-5 max-w-[560px]">
+              <div className="bg-white border border-border/60 rounded-xl p-7 my-5 max-w-[560px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
                 <ul className="flex flex-col gap-2">
                   {p.includes.map((t) => (
                     <li
                       key={t}
-                      className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-accent"
+                      className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
                     >
                       {t}
                     </li>
@@ -106,9 +106,10 @@ export default function StorePage() {
                   href={`mailto:zoe@chinamarketingzl.com?subject=${encodeURIComponent(
                     p.mailto
                   )}`}
-                  className="text-[13px] text-accent no-underline border-b border-accent-line pb-0.5 hover:text-ink hover:border-ink"
+                  className="group inline-flex items-center gap-2 text-[13px] text-accent no-underline border-b border-accent-line pb-0.5 transition-colors duration-300 hover:text-ink hover:border-ink"
                 >
-                  Join waitlist →
+                  Join waitlist
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </a>
               </div>
               {i < products.length - 1 && <Divider />}
@@ -116,7 +117,7 @@ export default function StorePage() {
           ))}
 
           {/* CTA */}
-          <div className="bg-ink text-cream text-center py-14 px-8 my-16">
+          <div className="bg-ink text-cream text-center py-14 px-8 my-16 rounded-2xl shadow-[0_20px_60px_-20px_rgba(26,26,26,0.4)]">
             <p className="font-display text-[clamp(24px,4vw,32px)] text-cream mb-3 leading-tight">
               Not ready for a product?
             </p>
@@ -126,9 +127,10 @@ export default function StorePage() {
             </p>
             <a
               href="mailto:zoe@chinamarketingzl.com?subject=Free email course"
-              className="inline-block bg-cream text-ink px-10 py-4 text-[15px] font-medium no-underline hover:opacity-90"
+              className="group inline-flex items-center gap-2 bg-cream text-ink px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-accent hover:text-cream hover:-translate-y-0.5 active:translate-y-0"
             >
-              Sign me up →
+              Sign me up
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Container>
