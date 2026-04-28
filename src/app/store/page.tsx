@@ -1,141 +1,148 @@
+import Image from "next/image";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import {
   Container,
   Eyebrow,
   H1,
-  H2,
-  Body,
   Divider,
   I,
 } from "@/components/Type";
+import { products, formatPrice } from "@/lib/products";
+
+export const metadata = {
+  title: "Store — Blueprints, Guides & Done-For-You Services | ZL Marketing",
+  description:
+    "Self-serve blueprints and done-for-you services to launch and grow on RedNote — built from 8+ years of hands-on experience.",
+};
 
 export default function StorePage() {
-  const products = [
-    {
-      label: "Most popular",
-      title: "RedNote Blueprint",
-      tagline:
-        "Your complete guide to launching on 小红书 — from zero to first inquiry.",
-      desc: "A step-by-step playbook covering platform mechanics, content strategy, account setup, niche positioning, and how to convert followers into clients. Built from 8 years of hands-on RedNote experience.",
-      includes: [
-        "60+ page strategy guide",
-        "Content pillar framework",
-        "Posting cadence templates",
-        "Caption formula examples",
-        "Niche positioning worksheet",
-      ],
-      mailto: "RedNote Blueprint — waitlist",
-    },
-    {
-      label: "For teams",
-      title: "Business Account DIY Guide",
-      tagline:
-        "Set up and run a RedNote business account — without an agency.",
-      desc: "Everything your team needs to configure, verify, and operate a brand account on RedNote. Includes compliance notes, content rules, and common mistakes to avoid.",
-      includes: [
-        "Account setup walkthrough",
-        "Verification requirements",
-        "Content compliance checklist",
-        "Post scheduling framework",
-        "Platform policy summary",
-      ],
-      mailto: "Business Account Guide — waitlist",
-    },
-    {
-      label: "For creators",
-      title: "Creator Pitch Kit",
-      tagline:
-        "A professional media kit template — ready to customise and send to brands.",
-      desc: "Designed for English-speaking creators who want to pitch Chinese brands or work with Chinese clients. Bilingual layout, rate card structure, pitch email examples.",
-      includes: [
-        "Canva media kit template",
-        "Bilingual (EN/CN) layout",
-        "Rate card framework",
-        "Pitch email templates",
-        "KOL contract checklist",
-      ],
-      mailto: "Creator Pitch Kit — waitlist",
-    },
-  ];
+  const digital = products.filter((p) => p.type === "digital");
+  const services = products.filter((p) => p.type === "service");
 
   return (
     <>
       <Nav active="/store" />
       <main className="flex-1">
         <Container>
-          {/* HERO */}
-          <section className="pt-24 pb-16 text-center">
-            <Eyebrow>Digital Resources</Eyebrow>
+          <section className="pt-24 pb-12 text-center">
+            <Eyebrow>Store</Eyebrow>
             <H1>
-              Build at <I>your own pace.</I>
+              Blueprints & <I>done-for-you</I> services for RedNote.
             </H1>
-            <p className="text-[15px] text-ink-soft leading-[1.85] max-w-[540px] mx-auto">
-              Practical, ready-to-use guides and kits for creators and small
-              teams who want to move on China — independently.
+            <p className="text-[15px] text-ink-soft leading-[1.85] max-w-[560px] mx-auto">
+              Self-serve playbooks if you want to learn it yourself, or hand
+              the whole process to me if you want it done right the first
+              time.
             </p>
           </section>
 
           <Divider />
 
-          {products.map((p, i) => (
-            <section key={p.title}>
-              <Eyebrow>{p.label}</Eyebrow>
-              <H2>{p.title}</H2>
-              <p className="text-[15px] italic text-ink-soft mb-4">
-                {p.tagline}
-              </p>
-              <Body>{p.desc}</Body>
-              <div className="bg-white border border-border/60 rounded-xl p-7 my-5 max-w-[560px] shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5">
-                <ul className="flex flex-col gap-2">
-                  {p.includes.map((t) => (
-                    <li
-                      key={t}
-                      className="text-[15px] text-ink-soft leading-[1.65] pl-6 relative before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-brand"
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
+          {digital.length > 0 && (
+            <section className="pb-4">
+              <Eyebrow>Self-serve playbooks</Eyebrow>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                {digital.map((p) => (
+                  <ProductCard key={p.slug} product={p} />
+                ))}
               </div>
-              <div className="flex flex-wrap items-center gap-4">
-                <p className="font-italic italic text-[18px] text-ink">
-                  Coming soon
-                </p>
-                <a
-                  href={`mailto:zoe@chinamarketingzl.com?subject=${encodeURIComponent(
-                    p.mailto
-                  )}`}
-                  className="group inline-flex items-center gap-2 text-[13px] text-accent no-underline border-b border-accent-line pb-0.5 transition-colors duration-300 hover:text-ink hover:border-ink"
-                >
-                  Join waitlist
-                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </a>
-              </div>
-              {i < products.length - 1 && <Divider />}
             </section>
-          ))}
+          )}
 
-          {/* CTA */}
-          <div className="bg-ink text-cream text-center py-14 px-8 my-16 rounded-2xl shadow-[0_20px_60px_-20px_rgba(26,26,26,0.4)]">
+          {services.length > 0 && (
+            <section className="pt-12 pb-12">
+              <Eyebrow>Done-for-you</Eyebrow>
+              <div className="grid grid-cols-1 gap-8 mt-6">
+                {services.map((p) => (
+                  <ProductCard key={p.slug} product={p} featured />
+                ))}
+              </div>
+            </section>
+          )}
+
+          <div className="bg-brand text-cream text-center py-14 px-8 my-8 rounded-2xl shadow-[0_20px_60px_-20px_rgba(79,105,126,0.45)]">
             <p className="font-display text-[clamp(24px,4vw,32px)] text-cream mb-3 leading-tight">
-              Not ready for a product?
+              Need something custom?
             </p>
-            <p className="text-[15px] text-cream/65 mb-8 leading-[1.7] max-w-[520px] mx-auto">
-              Start with the free 6-day RedNote Marketing 101 email course.
-              One email a day. Practical, specific, no fluff.
+            <p className="text-[15px] text-cream/70 mb-8 leading-[1.7] max-w-[520px] mx-auto">
+              Tell me about your brand or category and I&apos;ll send back the
+              right combination of strategy, services, or KOL campaigns.
             </p>
             <a
-              href="mailto:zoe@chinamarketingzl.com?subject=Free email course"
-              className="group inline-flex items-center gap-2 bg-cream text-ink px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-accent hover:text-cream hover:-translate-y-0.5 active:translate-y-0"
+              href="mailto:zoe@chinamarketingzl.com?subject=Custom%20RedNote%20engagement"
+              className="group inline-flex items-center gap-2 bg-cream text-brand px-9 py-3.5 text-[12px] uppercase tracking-[0.18em] no-underline rounded-full transition-all duration-300 hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0"
             >
-              Sign me up
-              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              Email Zoe
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
             </a>
           </div>
         </Container>
       </main>
       <Footer />
     </>
+  );
+}
+
+function ProductCard({
+  product: p,
+  featured = false,
+}: {
+  product: (typeof products)[number];
+  featured?: boolean;
+}) {
+  return (
+    <Link
+      href={`/${p.slug}`}
+      className="group block overflow-hidden bg-white border border-border/60 rounded-xl shadow-[0_4px_20px_-6px_rgba(26,26,26,0.08)] transition-all duration-400 ease-out hover:shadow-[0_18px_44px_-8px_rgba(26,26,26,0.14)] hover:-translate-y-1.5"
+    >
+      {p.image && (
+        <div className="overflow-hidden bg-cream/40">
+          <Image
+            src={p.image.src}
+            alt={p.image.alt}
+            width={p.image.width}
+            height={p.image.height}
+            className={`w-full block object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03] ${
+              featured ? "aspect-[16/9]" : "aspect-square"
+            }`}
+            unoptimized
+          />
+        </div>
+      )}
+      <div className="p-8">
+        <div className="flex items-start justify-between gap-6 mb-5">
+          <div>
+            <p className="text-[12px] uppercase tracking-[0.18em] text-ink-muted mb-2">
+              {p.type === "digital" ? "Digital download" : "Done-for-you service"}
+            </p>
+            <p
+              className={`font-display ${
+                featured
+                  ? "text-[clamp(24px,2.6vw,32px)]"
+                  : "text-[clamp(22px,2.4vw,28px)]"
+              } text-ink leading-[1.25]`}
+            >
+              {p.name}
+            </p>
+          </div>
+          <div className="text-right flex-shrink-0">
+            <p className="font-display text-[28px] text-brand leading-none">
+              {formatPrice(p.price)}
+            </p>
+          </div>
+        </div>
+        <p className="text-[14px] text-ink-soft leading-[1.75] mb-6">
+          {p.cardTagline}
+        </p>
+        <span className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-brand transition-transform duration-300 group-hover:translate-x-1">
+          Learn more
+          <span>→</span>
+        </span>
+      </div>
+    </Link>
   );
 }
