@@ -6,6 +6,8 @@ type Props = {
   suffix?: string;
   label: string;
   duration?: number;
+  /** Decimal places to preserve while animating (e.g. 1 keeps 10.5 as 10.5). */
+  decimals?: number;
 };
 
 export default function StatCounter({
@@ -13,6 +15,7 @@ export default function StatCounter({
   suffix = "",
   label,
   duration = 1600,
+  decimals = 0,
 }: Props) {
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -40,7 +43,7 @@ export default function StatCounter({
             const step = (now: number) => {
               const progress = Math.min((now - start) / duration, 1);
               const eased = 1 - Math.pow(1 - progress, 3);
-              setDisplay(Math.round(eased * value));
+              setDisplay(eased * value);
               if (progress < 1) requestAnimationFrame(step);
             };
             requestAnimationFrame(step);
@@ -54,10 +57,15 @@ export default function StatCounter({
     return () => observer.disconnect();
   }, [value, duration]);
 
+  const formatted = display.toLocaleString("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
+
   return (
     <div ref={ref} className="text-center">
       <p className="font-display text-[clamp(56px,8vw,96px)] text-brand leading-none font-normal tracking-[-0.02em] tabular-nums">
-        {display}
+        {formatted}
         {suffix}
       </p>
       <p className="text-[13px] text-ink-soft mt-5 tracking-[0.05em]">
